@@ -1,7 +1,9 @@
-from bottle import route, default_app,template
-
-@route('/')
-    return template('index.tpl')
+from bottle import Bottle,route,run,request,template
+@route('/hello')
+@route('/hello/')
+@route('/hello/<name>')
+def hello(name='Mundo'):
+	return template('index.tpl',nombre=name)
 
 # This must be added in order to do correct path lookups for the views
 import os
