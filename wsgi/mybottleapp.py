@@ -1,5 +1,7 @@
-from bottle import Bottle,route,request,template
-@route('/home')
+from bottle import Bottle,route,request,template,error
+import xml
+import requests
+@route('/')
 def index():	
 	return template('index.tpl')
 
