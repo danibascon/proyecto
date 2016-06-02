@@ -1,4 +1,15 @@
 from bottle import Bottle,route,request,template,error
+from bottle import route, run, template, get, post, request, response, redirect, default_app, static_file, TEMPLATE_PATH, error, redirect
+import urllib2
+import requests
+import json
+import time
+from HTMLParser import HTMLParser
+from coc.api import ClashOfClans
+from requests_oauthlib import OAuth1
+from urlparse import parse_qs
+import os
+
 import xml
 import requests
 @route('/')
