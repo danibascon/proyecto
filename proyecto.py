@@ -1,7 +1,7 @@
 from sys import argv
 import bottle
 from bottle import Bottle,route,run,request,template,static_file,redirect,get,post
-
+import os
 import json
 import requests
 
@@ -14,7 +14,8 @@ def intro():
 def inicio():
 	buscar = request.forms.get('buscar')
 
-	key = "AIzaSyCQ4B63lIw1dupVUF4X3OpvI2ByB4DDgdw"
+	a=open("key","r")
+	key=os.environ["key"]	
 	part='id,snippet'
 	payload={"part":part,"key":key, "q": buscar}
 
