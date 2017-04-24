@@ -14,10 +14,10 @@ def intro():
 def inicio():
 	buscar = request.forms.get('buscar')
 	cantidad = request.forms.get('cantidad')
-
+	video="video"
 	key=os.environ["Key"]	
 	part='id,snippet'
-	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad}
+	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
 
 	#https://www.googleapis.com/youtube/v3/search?&part=id,snippet&key=AIzaSyCQ4B63lIw1dupVUF4X3OpvI2ByB4DDgdw&q=Yandel
 	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
