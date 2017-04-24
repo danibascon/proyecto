@@ -17,7 +17,7 @@ def inicio():
 
 	key=os.environ["Key"]	
 	part='id,snippet'
-	payload={"part":part,"key":key, "q": buscar, "maxResults"}
+	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad}
 
 	#https://www.googleapis.com/youtube/v3/search?&part=id,snippet&key=AIzaSyCQ4B63lIw1dupVUF4X3OpvI2ByB4DDgdw&q=Yandel
 	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
