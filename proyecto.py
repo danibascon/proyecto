@@ -13,7 +13,7 @@ def intro():
 @route('/formulario',method="post")
 def inicio():
 	buscar = request.forms.get('buscar')
-	key=os.environ["key"]	
+	key=os.environ["Key"]	
 	part='id,snippet'
 	payload={"part":part,"key":key, "q": buscar}
 
