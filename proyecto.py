@@ -177,9 +177,9 @@ def tweet_submit():
                       data={"status":texto},
                       auth=oauth)
   if r.status_code == 200:
-    return "<p>Tweet properly sent</p>"
+    return template('positivo.tpl')
   else:
-    return "<p>Unable to send tweet</p>"+r.content
+    return template('negativo.tpl')
 
 @get('/twitter_logout')
 def twitter_logout():
