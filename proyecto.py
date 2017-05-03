@@ -128,7 +128,7 @@ def twitter():
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
     response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
-    redirect authorize_url
+    redirect (authorize_url)
 
 @get('/callback')
 
@@ -195,5 +195,4 @@ def server_static(filepath):
 	return static_file(filepath, root='static')
 
 
-if __name__ == '__main__':
-	run(host='0.0.0.0',port=argv[1])
+run(host='0.0.0.0',port=argv[1])
