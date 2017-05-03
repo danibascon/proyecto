@@ -126,7 +126,7 @@ def inicio():
 def twitter():
     get_request_token()
     url=request.forms.get("url")
-    response.set_cookie("url", url,secret='')
+    response.set_cookie("url", url,secret='some-secret-key')
     authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
     response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
     response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
@@ -146,7 +146,7 @@ def get_verifier():
 
 @get('/twittear')
 def twittear():
-    url=request.get_cookie("url", secret='')
+    url=request.get_cookie("url", secret='some-secret-key')
     if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
