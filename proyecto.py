@@ -122,7 +122,7 @@ def inicio():
 #Parte para twitter
 
 
-@get('/twitter')
+@post('/twitter')
 def twitter():
     get_request_token()
     url=request.forms.get("url")

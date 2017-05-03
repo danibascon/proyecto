@@ -4,7 +4,7 @@
 	<h1>Resultado de la busqueda <strong>{{buscar}}</strong> son:</h1>
 	% for a,b in zip(lista_ti,lista_id):
 		<p>Enlace: <a href="https://www.youtube.com/watch?v={{b}}"><strong>{{a}}</strong></a></p>
-		<form action="/twitter" method="get">
+		<form action="/twitter" method="post">
 			<input type="hidden" name="url" value="{{b}}"/>
     		<p><input type="submit" class="button" value="Enviar" /></p>
 		</form>
