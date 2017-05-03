@@ -147,7 +147,8 @@ def twittear():
     if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
-      return template('tweet')  
+      #return template('tweet') 
+      
     else:
       redirect('/twitter')
 
