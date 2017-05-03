@@ -3,7 +3,7 @@
     <title>.::Usando la API de twitter::.</title>
   </head>
   <body>
-    <p>Buen momento para un tweet:s</p>
+    <p>Buen momento para un tweet:</p>
     <br />
     <form action="/twittear" method="post">
       <p><textarea name="tweet" id="textbox" rows="3" cols="50" maxlength="140">
