@@ -7,7 +7,7 @@
     <br />
     <form action="/twittear" method="post">
       <p><textarea name="tweet" id="textbox" rows="3" cols="50" maxlength="140">
-        Me ha gustado el vídeo: {{url}}
+        Me ha gustado: {{url}}
 
 
       </textarea></p>
