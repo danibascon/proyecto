@@ -19,8 +19,6 @@
           <h1>Bienvenidos a YouTwitt</h1>
         </div>
       </div>
-      
-    </div> 
-
+    </div>
     <div id="site_content">
       
