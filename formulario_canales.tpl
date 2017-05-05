@@ -11,5 +11,5 @@
 		<img aria-hidden="true" width="64" alt="" height="64" src="{{c}}" >
 
 	%end
-</br>
+<br>
 %include('footer.tpl')

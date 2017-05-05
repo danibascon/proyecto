@@ -7,7 +7,7 @@
 		<input type="number" name="cantidad" min='1' value='1' max='10' required/>
 		<input type="submit" value="Enviar">
 	</form>
-</br>
+<br>
 %include('footer.tpl')
 
 
