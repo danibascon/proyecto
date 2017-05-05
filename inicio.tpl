@@ -1,9 +1,7 @@
 %include('header.tpl')
-<il>
-	<br/>	
-		<a href="/videos">Buscador de videos</a>
-	<br/>
-		<a href="/videos_canales">Buscador de canales</a>
-	<br/>
-</il>
+
+	<h1><a href="/videos">Buscador de videos</a></h1>
+
+	<h1><a href="/videos_canales">Buscador de canales</a></h1>
+
 %include('footer.tpl')
