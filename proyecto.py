@@ -81,7 +81,24 @@ def inicio():
 		lista_id.append(x['id']['videoId'])
 		lista_ti.append(x['snippet']['title'])
 
-	return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
+
+
+
+  clave=os.environ["clave"]
+  artista = request.forms.get('buscar')
+  payloaad={"apikey":clave, "q":artista}
+
+  g=requests.get('http://api.musixmatch.com/ws/1.1/track.search?',params=payloaad)
+
+  if r.status_code==200:
+    c=json.loads(r.text)
+
+
+  dire=''
+  for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
+    dire=dire+x
+
+	return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar, dire=dire)
 
 
 
@@ -113,7 +130,6 @@ def inicio():
 		lista_foto.append(x['snippet']['thumbnails']['default']['url'])
 
 	return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
-
 
 
 
