@@ -121,7 +121,7 @@ def inicio():
 @route('/letra',method='post')
 def letra():
   clave=os.environ["clave"]
-  artista= requests.forms.get('artista')
+  artista = request.forms.get('artista')
   payloaad={"apikey":clave, "q":artista}
 
   g=requests.get('http://api.musixmatch.com/ws/1.1/track.search?',params=payloaad)
