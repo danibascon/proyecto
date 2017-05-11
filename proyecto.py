@@ -68,8 +68,8 @@ def inicio():
   cantidad = request.forms.get('cantidad')
   key=os.environ["Key"] 
   video="video"
-	part='id,snippet'
-	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
+  part="id,snippet"
+  payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
 
 	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
 	if r.status_code==200:
