@@ -64,10 +64,9 @@ def intro():
 
 @route('/formulario',method="post")
 def inicio():
-
-  key=os.environ["Key"]
-	buscar = request.forms.get('buscar')
-	cantidad = request.forms.get('cantidad')
+  buscar = request.forms.get('buscar')
+  cantidad = request.forms.get('cantidad')
+  key=os.environ["Key"] 
 	video="video"
 	part='id,snippet'
 	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
@@ -119,7 +118,7 @@ def inicio():
 
 
 
-@get('/letra')
+@route('/letra',method='get')
 def letra():
   clave=os.environ["clave"]
   artista = request.forms.get("artista")
