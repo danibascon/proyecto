@@ -67,7 +67,7 @@ def intro():
 @route('/formulario',method="post")
 def inicio():
 	buscar = request.forms.get('buscar')
-  artista = buscar
+  artista = request.forms.get('artista')
 	cantidad = request.forms.get('cantidad')
 	video="video"
 	part='id,snippet'
