@@ -68,11 +68,10 @@ def intro():
 def inicio():
 	buscar = request.forms.get('buscar')
 	cantidad = request.forms.get('cantidad')
-  artista = request.forms.get('buscar')
 	video="video"
 	part='id,snippet'
 	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
-  payloaad={"apikey":clave, "q":artista}
+  payloaad={"apikey":clave, "q":buscar}
 
 	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
 	if r.status_code==200:
