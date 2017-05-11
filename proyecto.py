@@ -122,8 +122,8 @@ def inicio():
 def letra():
   clave=os.environ["clave"]
   artista = request.forms.get('artista')
-  if '(Official Audio)' in artista:
-    artista= artista[:-17]
+  if '(Official Audio)' in q or '(Official Video)' in q:
+    q= q[:-17]
   payloaad={"apikey":clave, "q":artista}
 
   r=requests.get('http://api.musixmatch.com/ws/1.1/track.search?',params=payloaad)
