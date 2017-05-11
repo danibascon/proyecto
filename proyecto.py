@@ -67,7 +67,7 @@ def inicio():
   buscar = request.forms.get('buscar')
   cantidad = request.forms.get('cantidad')
   key=os.environ["Key"] 
-	video="video"
+  video="video"
 	part='id,snippet'
 	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
 
