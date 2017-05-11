@@ -17,8 +17,6 @@ ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 
 CONSUMER_KEY = os.environ["CONSUMER_KEY"]
 CONSUMER_SECRET = os.environ["CONSUMER_SECRET"]
-clave=os.environ["clave"]
-key=os.environ["Key"]
 
 TOKENS = {}
 
@@ -66,12 +64,13 @@ def intro():
 
 @route('/formulario',method="post")
 def inicio():
+
+  key=os.environ["Key"]
 	buscar = request.forms.get('buscar')
 	cantidad = request.forms.get('cantidad')
 	video="video"
 	part='id,snippet'
 	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
-  payloaad={"apikey":clave, "q":buscar}
 
 	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
 	if r.status_code==200:
@@ -85,17 +84,7 @@ def inicio():
 
 
 
-  g=requests.get('http://api.musixmatch.com/ws/1.1/track.search?',params=payloaad)
-  if r.status_code==200:
-    c=json.loads(r.text)
-  dire=''
-
-  for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
-    dire=dire+x
-
-
-
-	return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar, dire=dire)
+	return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
 
 
 
@@ -127,6 +116,26 @@ def inicio():
 		lista_foto.append(x['snippet']['thumbnails']['default']['url'])
 
 	return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
+
+
+
+@get('/letra')
+def letra():
+  clave=os.environ["clave"]
+  artista = request.forms.get("artista")
+
+  payloaad={"apikey":clave, "q":artista}
+  g=requests.get('http://api.musixmatch.com/ws/1.1/track.search?',params=payloaad)
+  dire=''
+
+  if r.status_code==200:
+    c=json.loads(r.text)
+
+  for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
+    dire=dire+x
+
+  redirect (dire)
+
 
 
 
@@ -199,15 +208,6 @@ def twitter_logout():
   response.set_cookie("access_token", '',max_age=0)
   response.set_cookie("access_token_secret", '',max_age=0)
   redirect('/twitter')
-
-
-
-
-
-
-
-
-
 
 
 @route('/static/<filepath:path>')

@@ -8,7 +8,11 @@
 			<input type="hidden" name="url" value="https://www.youtube.com/watch?v={{b}}"/>
     		<p><input type="submit" class="button" value="Enviar" /></p>
 		</form>
-		<p>Letra: <a href="{{dire}}"/></p>
+		<br>
+		<form action="/letra" method="post">
+			<input type="hidden" name="artista" value="{{a}}"/>
+    		<p><input type="submit" class="button" value="Enviar" /></p>
+		</form>
 		<iframe width="854" height="480" src="https://www.youtube.com/embed/{{b}}" frameborder="0" allowfullscreen></iframe>
 	%end
 <br>
