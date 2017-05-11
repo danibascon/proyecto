@@ -17,6 +17,8 @@ ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 
 CONSUMER_KEY = os.environ["CONSUMER_KEY"]
 CONSUMER_SECRET = os.environ["CONSUMER_SECRET"]
+clave=os.environ["clave"]
+key=os.environ["Key"]
 
 TOKENS = {}
 
@@ -67,7 +69,6 @@ def inicio():
 	buscar = request.forms.get('buscar')
 	cantidad = request.forms.get('cantidad')
 	video="video"
-	key=os.environ["Key"]
 	part='id,snippet'
 	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
 
@@ -84,7 +85,6 @@ def inicio():
 
 
 
-  clave=os.environ["clave"]
   artista = request.forms.get('buscar')
   payloaad={"apikey":clave, "q":artista}
 
