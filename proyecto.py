@@ -124,10 +124,10 @@ def letra():
   artista = request.forms.get('artista')
   payloaad={"apikey":clave, "q":artista}
 
-  g=requests.get('http://api.musixmatch.com/ws/1.1/track.search?',params=payloaad)
+  r=requests.get('http://api.musixmatch.com/ws/1.1/track.search?',params=payloaad)
   dire=''
-  if g.status_code==200:
-    c=json.loads(g.text)
+  if r.status_code==200:
+    c=json.loads(r.text)
   for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
     dire=dire+x
 
