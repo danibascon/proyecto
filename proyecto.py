@@ -118,7 +118,7 @@ def inicio():
 
 
 
-@route('/letra',method='get')
+@route('/letra',method='post')
 def letra():
   clave=os.environ["clave"]
   artista = request.forms.get("artista")
