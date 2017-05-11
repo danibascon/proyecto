@@ -71,19 +71,19 @@ def inicio():
   part="id,snippet"
   payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
 
-	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
-	if r.status_code==200:
-		js=json.loads(r.text)
-	lista_ti=[]
-	lista_id=[]
+  r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
+  if r.status_code==200:
+    js=json.loads(r.text)
+  lista_ti=[]
+  lista_id=[]
 
-	for x in js['items']:
-		lista_id.append(x['id']['videoId'])
-		lista_ti.append(x['snippet']['title'])
+  for x in js['items']:
+    lista_id.append(x['id']['videoId'])
+    lista_ti.append(x['snippet']['title'])
 
 
 
-	return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
+  return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
 
 
 
