@@ -68,9 +68,11 @@ def intro():
 def inicio():
 	buscar = request.forms.get('buscar')
 	cantidad = request.forms.get('cantidad')
+  artista = request.forms.get('buscar')
 	video="video"
 	part='id,snippet'
 	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
+  payloaad={"apikey":clave, "q":artista}
 
 	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
 	if r.status_code==200:
@@ -84,19 +86,15 @@ def inicio():
 
 
 
-
-  artista = request.forms.get('buscar')
-  payloaad={"apikey":clave, "q":artista}
-
   g=requests.get('http://api.musixmatch.com/ws/1.1/track.search?',params=payloaad)
-
   if r.status_code==200:
     c=json.loads(r.text)
-
-
   dire=''
+
   for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
     dire=dire+x
+
+
 
 	return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar, dire=dire)
 
