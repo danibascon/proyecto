@@ -122,7 +122,8 @@ def inicio():
 def letra():
   clave=os.environ["clave"]
   artista = request.forms.get('artista')
-  artista=artista[:artista.find('(')-1]
+  if '(' in artista:
+    artista=artista[:artista.find('(')-1]
 
   payloaad={"apikey":clave, "q":artista}
 
@@ -130,6 +131,8 @@ def letra():
   dire=''
   if r.status_code==200:
     c=json.loads(r.text)
+
+  
   for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
     dire=dire+x
 
