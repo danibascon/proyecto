@@ -74,6 +74,10 @@ def inicio():
   r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
   if r.status_code==200:
     js=json.loads(r.text)
+
+  else:
+    return template('error.tpl')
+
   lista_ti=[]
   lista_id=[]
 
@@ -105,8 +109,10 @@ def inicio():
 	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
 	if r.status_code==200:
 		js=json.loads(r.text)
+    
   else:
     return template('error.tpl')
+
 	lista_ti=[]
 	lista_id=[]
 	lista_foto=[]
@@ -133,6 +139,7 @@ def letra():
   dire=''
   if r.status_code==200:
     c=json.loads(r.text)
+
   else:
     return template('error.tpl')
   
