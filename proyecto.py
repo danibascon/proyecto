@@ -111,7 +111,7 @@ def inicio():
 		js=json.loads(r.text)
 
   else:
-    return template('error.tpl')
+    return template('error1.tpl')
 
 	lista_ti=[]
 	lista_id=[]
