@@ -110,8 +110,10 @@ def inicio():
 	if r.status_code==200:
 		js=json.loads(r.text)
 
+
   else:
     return template('error1.tpl')
+
 
 	lista_ti=[]
 	lista_id=[]
