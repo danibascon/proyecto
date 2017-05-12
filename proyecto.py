@@ -109,7 +109,7 @@ def inicio():
 	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
 	if r.status_code==200:
 		js=json.loads(r.text)
-    
+
   else:
     return template('error.tpl')
 
