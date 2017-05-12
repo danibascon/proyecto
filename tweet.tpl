@@ -1,17 +1,13 @@
-%include('header.tpl')
-
-    <title>.::Usando la API de twitter::.</title>
-  </head>
-  <body>
+%include('header.tpl')  
+    <h1>.::Usando la API de twitter::.</h1>
     <p>Buen momento para un tweet:</p>
     <br />
     <form action="/twittear" method="post">
       <p><textarea name="tweet" id="textbox" rows="3" cols="50" maxlength="140">
-        Me ha gustado: {{url}}
+        Me ha gustado: https://www.youtube.com/channel/UCc1QpDE0iT0n6ZLckjflNHw
 
 
       </textarea></p>
       <p><input type="submit" class="button" value="Enviar" /></p>
     </form>
-  </body>
 %include('footer.tpl')
