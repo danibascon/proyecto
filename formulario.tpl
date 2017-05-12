@@ -13,7 +13,7 @@
 			<input type="hidden" name="artista" value="{{a}}"/>
     		<p><input type="submit" class="button" value="Letra" /></p>
 		</form>
-		<iframe width="854" height="480" src="https://www.youtube.com/embed/{{b}}" frameborder="0" allowfullscreen></iframe>
+		<iframe width="854" height="480" src="https://www.youtube.com/embed/{{b}}"  allowfullscreen></iframe>
 	%end
 <br>
 %include('footer.tpl')
