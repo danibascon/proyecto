@@ -75,9 +75,6 @@ def inicio():
   if r.status_code==200:
     js=json.loads(r.text)
 
-  else:
-    return template('error.tpl')
-
   lista_ti=[]
   lista_id=[]
 
@@ -88,6 +85,9 @@ def inicio():
 
 
   return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
+
+  else:
+    return template('error.tpl')
 
 
 
