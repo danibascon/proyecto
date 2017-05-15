@@ -110,21 +110,19 @@ def inicio():
 	if r.status_code==200:
 		js=json.loads(r.text)
 
+  	lista_ti=[]
+  	lista_id=[]
+  	lista_foto=[]
+
+  	for x in js['items']:
+  		lista_id.append(x['id']['channelId'])
+  		lista_ti.append(x['snippet']['title'])
+  		lista_foto.append(x['snippet']['thumbnails']['default']['url'])
+
+	 return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
 
   else:
     return template('error1.tpl')
-
-
-	lista_ti=[]
-	lista_id=[]
-	lista_foto=[]
-
-	for x in js['items']:
-		lista_id.append(x['id']['channelId'])
-		lista_ti.append(x['snippet']['title'])
-		lista_foto.append(x['snippet']['thumbnails']['default']['url'])
-
-	return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
 
 
 
@@ -141,15 +139,16 @@ def letra():
   dire=''
   if r.status_code==200:
     c=json.loads(r.text)
+  
+   for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
+      dire=dire+x
+
+  redirect (dire)
+
 
   else:
     return template('error.tpl')
   
-  for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
-    dire=dire+x
-
-  redirect (dire)
-
 
 
 
