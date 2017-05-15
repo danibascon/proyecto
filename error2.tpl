@@ -4,5 +4,5 @@
 	<h2>Lo sentimos mucho</h2>
 <br>
 	<h1>¿Que quieres hacer ahora?</h1>
-	<p><a href="/">Buscar de nuevo</a></p>
+	<p><a href="/formulario">Buscar de nuevo</a></p>
 %include('footer.tpl')
