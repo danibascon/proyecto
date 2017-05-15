@@ -1,5 +1,6 @@
 %include('header.tpl')
 <br>
+	<h1>BUSCADOR DE VIDEOS</h1>
 	<form action="/formulario" method="post">
 		<label>Nombre que buscar:</label>
 		<input type="text" name="buscar" required/>
