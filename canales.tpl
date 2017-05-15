@@ -1,6 +1,6 @@
 %include('header.tpl')
 <br>
-	<h1>BUSCADOR DE VIDEOS</h1>
+	<h1>BUSCADOR DE CANALES</h1>
 	<form action="/canal" method="post">
 		<label>Nombre del canal:</label>
 		<input type="text" name="buscar" required/>
