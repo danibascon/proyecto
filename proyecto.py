@@ -77,7 +77,12 @@ def inicio():
       lista_id.append(x['id']['videoId'])
       lista_ti.append(x['snippet']['title'])
 
-    return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
+    if len(lista_id) != 0:
+      return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
+
+    else:
+      return template('error.tpl')
+
 
   else:
     return template('error.tpl')
@@ -111,7 +116,12 @@ def inicio():
       lista_ti.append(x['snippet']['title'])
       lista_foto.append(x['snippet']['thumbnails']['default']['url'])
 
-    return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
+    if len(lista_id) != 0:
+      return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
+
+    else:
+      return template('error1.tpl')
+
 
   else:
     return template('error1.tpl')
