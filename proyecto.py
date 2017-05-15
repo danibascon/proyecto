@@ -141,11 +141,15 @@ def letra():
   dire=''
   if r.status_code==200:
     c=json.loads(r.text)
-  
-    for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
-      dire=dire+x
+    
+    if len(a['message']['body']['track_list']) != 0:  
+      for x in c['message']['body']['track_list'][0]['track']['track_share_url']:
+        dire=dire+x
 
-    redirect (dire)
+      redirect (dire)
+      
+    else:
+      return template('error2.tpl')
 
   else:
     return template('error2.tpl')
