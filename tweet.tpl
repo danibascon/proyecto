@@ -9,5 +9,6 @@
 
       </textarea></p>
       <p><input type="submit" class="button" value="Enviar" /></p>
+      <p><a href="/">Buscar de nuevo</a></p>
     </form>
 %include('footer.tpl')

@@ -12,4 +12,5 @@
 
 	%end
 <br>
+<p><a href="/videos_canales">Volver atras</a></p>
 %include('footer.tpl')

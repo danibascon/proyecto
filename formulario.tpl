@@ -16,4 +16,5 @@
 		<iframe width="854" height="480" src="https://www.youtube.com/embed/{{b}}"  allowfullscreen></iframe>
 	%end
 <br>
+<p><a href="/videos">Volver atras</a></p>
 %include('footer.tpl')
