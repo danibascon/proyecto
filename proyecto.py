@@ -100,11 +100,12 @@ def inicio():
 	payload={"part":part,"key":key, "q": buscar, "maxResults":cantidad, "type":video}
 
 	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
-  lista_ti=[]
-  lista_id=[]
-  lista_foto=[]
+
 
 	if r.status_code==200:
+    lista_ti=[]
+    lista_id=[]
+    lista_foto=[]
 		js=json.loads(r.text)
 
   	for x in js['items']:
@@ -113,7 +114,7 @@ def inicio():
   		lista_foto.append(x['snippet']['thumbnails']['default']['url'])
 
     return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
-    
+
   else:
     return template('error1.tpl')
 
