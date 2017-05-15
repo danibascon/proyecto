@@ -22,8 +22,6 @@ TOKENS = {}
 
 ###oauth1
 
-
-
 def get_request_token():
     oauth = OAuth1(CONSUMER_KEY,
                    client_secret=CONSUMER_SECRET,
@@ -49,8 +47,6 @@ def get_access_token(TOKENS):
 
 
 
-
-
 @route('/', method="get")
 def intro():
 	return template('inicio.tpl')
@@ -59,7 +55,6 @@ def intro():
 @route('/videos', method="get")
 def intro():
 	return template('template.tpl')
-
 
 
 @route('/formulario',method="post")
@@ -119,8 +114,6 @@ def inicio():
 
     return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
 
-  else:
-    return template('error1.tpl')
 
 
 @route('/letra',method='post')
