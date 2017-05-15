@@ -103,16 +103,19 @@ def inicio():
 	if r.status_code==200:
 		js=json.loads(r.text)
 
-	lista_ti=[]
-	lista_id=[]
-	lista_foto=[]
+  	lista_ti=[]
+  	lista_id=[]
+  	lista_foto=[]
 
-	for x in js['items']:
-		lista_id.append(x['id']['channelId'])
-		lista_ti.append(x['snippet']['title'])
-		lista_foto.append(x['snippet']['thumbnails']['default']['url'])
+  	for x in js['items']:
+  		lista_id.append(x['id']['channelId'])
+  		lista_ti.append(x['snippet']['title'])
+  		lista_foto.append(x['snippet']['thumbnails']['default']['url'])
 
-  return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
+    return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
+
+  else:
+    return template('error1.tpl')
 
 
 @route('/letra',method='post')
