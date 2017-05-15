@@ -114,6 +114,8 @@ def inicio():
 
     return template('formulario_canales.tpl', lista_id=lista_id, lista_ti=lista_ti, lista_foto=lista_foto, buscar=buscar)
 
+  else:
+    return template('error1.tpl')
 
 
 @route('/letra',method='post')
