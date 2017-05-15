@@ -123,7 +123,6 @@ def inicio():
     return template('error1.tpl')
 
 
-
 @route('/letra',method='post')
 def letra():
   clave=os.environ["clave"]
