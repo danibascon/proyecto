@@ -82,8 +82,6 @@ def inicio():
     lista_id.append(x['id']['videoId'])
     lista_ti.append(x['snippet']['title'])
 
-
-
   return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
 
   else:
