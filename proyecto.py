@@ -75,14 +75,14 @@ def inicio():
   if r.status_code==200:
     js=json.loads(r.text)
 
-  lista_ti=[]
-  lista_id=[]
+    lista_ti=[]
+    lista_id=[]
 
-  for x in js['items']:
-    lista_id.append(x['id']['videoId'])
-    lista_ti.append(x['snippet']['title'])
+    for x in js['items']:
+      lista_id.append(x['id']['videoId'])
+      lista_ti.append(x['snippet']['title'])
 
-  return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
+    return template('formulario.tpl', lista_id=lista_id, lista_ti=lista_ti, buscar=buscar)
 
   else:
     return template('error.tpl')
